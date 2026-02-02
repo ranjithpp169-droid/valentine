@@ -8,8 +8,20 @@
 
   <h1>Will you be my Valentine? 💖</h1>
 
-  <a href="yes.html"><button class="yes">YES 💘</button></a>
-  <a href="no.html"><button class="no">NO 💔</button></a>
+  <button class="yes" onclick="location.href='yes.html'">YES 💘</button>
+  <button class="no" id="noBtn">NO 💔</button>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.floor(Math.random() * window.innerWidth - 100);
+      const y = Math.floor(Math.random() * window.innerHeight - 100);
+      noBtn.style.position = "absolute";
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    });
+  </script>
 
 </body>
 </html>
