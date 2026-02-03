@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love you മുത്തേ…💋</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3, #ffd3a5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+/* 💖 Celebration Card */
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 50px 30px;
+  border-radius: 25px;
+  max-width: 600px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  animation: popIn 1.2s ease;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.6); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 44px;
+  color: #d63384;
+  margin-bottom: 15px;
+}
+
+.message {
+  font-size: 18px;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+.ring {
+  font-size: 70px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* 💌 Thank You Note */
+.thankyou {
+  margin-top: 25px;
+  font-size: 16px;
+  color: #555;
+  line-height: 1.7;
+  font-style: italic;
+}
+
+/* 🎊 Confetti */
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  top: -10px;
+  opacity: 0.9;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(720deg);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <div class="ring">💍</div>
+  <h1>She Said YES! ❤️</h1>
+
+  <div class="message">
+    Anugraha said YES to forever 💖  
+    Today marks the beginning of our beautiful journey together.  
+    More love, more laughter, more memories…  
+    and a lifetime side by side.  
+
+    We’re officially engaged! 💍✨
+  </div>
+
+  <div class="thankyou">
+    Thank you for choosing me, for loving me, and for walking into my life.  
+    No matter where life takes us, I promise to stand by you, support you,  
+    and love you more with each passing day. 💖  
+
+    Forever yours, ❤️
+  </div>
+</div>
+
+<script>
+// 🎊 Generate Confetti
+const colors = ["#ff4d6d", "#ff8fab", "#ffd166", "#06d6a0", "#118ab2", "#ffffff"];
+
+for (let i = 0; i < 140; i++) {
+  let confetti = document.createElement("div");
+  confetti.classList.add("confetti");
+  confetti.style.left = Math.random() * 100 + "vw";
+  confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+  confetti.style.animationDuration = (Math.random() * 3 + 2) + "s";
+  confetti.style.width = confetti.style.height = (Math.random() * 8 + 6) + "px";
+  document.body.appendChild(confetti);
+}
+</script>
+
+</body>
+</html>

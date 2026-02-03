@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ഉത്തരം പറ 🤨</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ffd6e0, #ffe6f0);
+  text-align: center;
+}
+
+h1 { margin-top: 20px; }
+
+.score {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ff4d88;
+}
+
+.question-box {
+  background: rgba(255,255,255,0.6);
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 20px;
+  max-width: 600px;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.option-btn {
+  border: 4px solid transparent;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.option-btn img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+}
+
+.correct { border-color: #00cc66; box-shadow: 0 0 10px #00cc66; }
+.wrong { border-color: red; box-shadow: 0 0 10px red; }
+
+/* 💬 Dialogue Box */
+.dialogue-box {
+  background: rgba(255,255,255,0.8);
+  max-width: 650px;
+  margin: 30px auto 10px;
+  padding: 18px;
+  border-radius: 20px;
+  font-size: 18px;
+  color: #444;
+}
+
+/* ⏭ Next Button */
+.next-btn {
+  margin: 20px;
+  padding: 12px 30px;
+  border-radius: 25px;
+  border: none;
+  background: #ff4d88;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.next-btn:hover { transform: scale(1.1); }
+</style>
+</head>
+
+<body>
+
+<h1>How Well Do We Match? 💘</h1>
+<div class="score">Score: <span id="score">0</span> / 12</div>
+<div id="quiz"></div>
+
+<!-- 💬 Dialogue -->
+<div class="dialogue-box">
+  Match score എത്രയ.? Screenshot അയക്ക് <br><br>കൂടുതൽ വിവരങ്ങൾക്കായി 1 അമർത്തുക
+</div>
+
+<button class="next-btn" onclick="goNext()">1 ➜</button>
+
+<script>
+let score = 0;
+
+const myAnswers = {
+  q1:"midnight", q2:"holdinghands", q3:"loveletter", q4:"beach",
+  q5:"countryside", q6:"cooking", q7:"dance", q8:"cuddle",
+  q9:"bracelets", q10:"hugs", q11:"picnic", q12:"horror"
+};
+
+const questions = [
+  {id:"q1",q:"Sunset or Midnight?",a1:"sunset.jpg",v1:"sunset",a2:"midnight.jpg",v2:"midnight"},
+  {id:"q2",q:"Holding hands or Forehead kiss?",a1:"holdinghands.jpg",v1:"holdinghands",a2:"foreheadkiss.jpg",v2:"foreheadkiss"},
+  {id:"q3",q:"Love letter or Gift?",a1:"loveletter.jpg",v1:"loveletter",a2:"gift.jpg",v2:"gift"},
+  {id:"q4",q:"Mountains or Beach?",a1:"mountains.jpg",v1:"mountains",a2:"beach.jpg",v2:"beach"},
+  {id:"q5",q:"City or Countryside?",a1:"city.jpg",v1:"city",a2:"countryside.jpg",v2:"countryside"},
+  {id:"q6",q:"Cook or Order food?",a1:"cooking.jpg",v1:"cooking",a2:"food.jpg",v2:"food"},
+  {id:"q7",q:"Sing or Dance?",a1:"sing.jpg",v1:"sing",a2:"dance.jpg",v2:"dance"},
+  {id:"q8",q:"Pillow fight or Cuddle?",a1:"pillowfight.jpg",v1:"pillowfight",a2:"cuddle.jpg",v2:"cuddle"},
+  {id:"q9",q:"Matching outfits or Bracelets?",a1:"outfits.jpg",v1:"outfits",a2:"bracelets.jpg",v2:"bracelets"},
+  {id:"q10",q:"Kisses or Hugs?",a1:"kisses.jpg",v1:"kisses",a2:"hugs.jpg",v2:"hugs"},
+  {id:"q11",q:"Rain cuddle or Picnic?",a1:"rainycuddle.jpg",v1:"rainycuddle",a2:"picnic.jpg",v2:"picnic"},
+  {id:"q12",q:"Horror or Romantic movie?",a1:"horror.jpg",v1:"horror",a2:"romanticmovie.jpg",v2:"romantic"}
+];
+
+questions.forEach(item=>{
+  let box=document.createElement("div");
+  box.className="question-box";
+  box.innerHTML=`<h3>${item.q}</h3>
+  <div class="options">
+    <div class="option-btn" onclick="selectAnswer(this,'${item.id}','${item.v1}')"><img src="${item.a1}"></div>
+    <div class="option-btn" onclick="selectAnswer(this,'${item.id}','${item.v2}')"><img src="${item.a2}"></div>
+  </div>`;
+  document.getElementById("quiz").appendChild(box);
+});
+
+function selectAnswer(btn,q,val){
+  if(btn.parentElement.classList.contains("done")) return;
+  btn.parentElement.classList.add("done");
+
+  if(val===myAnswers[q]){
+    btn.classList.add("correct");
+    score++;
+  } else {
+    btn.classList.add("wrong");
+  }
+  document.getElementById("score").innerText=score;
+}
+
+function goNext(){
+  localStorage.setItem("matchScore",score);
+  window.location.href="nextpage2.html";
+}
+</script>
+
+</body>
+</html>
