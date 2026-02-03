@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>നമസ്കാരം ഒണ്ടേ 🙏</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #ffcc00; /* Yellow background */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+/* 📱 Image responsive */
+img {
+  max-width: 50%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  margin-bottom: 30px;
+}
+
+/* 🔘 Button */
+button {
+  padding: 12px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  background: black;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+</style>
+</head>
+
+<body>
+
+<img src="meme.jpg" alt="Funny Meme">
+
+<button onclick="goNext()">Continue ➡</button>
+
+<script>
+function goNext() {
+  window.location.href = "nextpage.html"; // 🔁 change to your page name
+}
+</script>
+
+</body>
+</html>

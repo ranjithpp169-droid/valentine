@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>എന്നാ വേഗം നോക്കിക്കോ</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  background: linear-gradient(135deg, #ffd6e0, #ffe6f0);
+}
+
+h1 {
+  margin-top: 30px;
+  font-size: 28px;
+  color: #ff4d88;
+}
+
+.subtitle {
+  color: #555;
+  margin-bottom: 25px;
+  padding: 0 15px;
+}
+
+.tasks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.task-btn {
+  padding: 14px;
+  border-radius: 15px;
+  border: none;
+  background: linear-gradient(45deg, #ff6f91, #ffb6c1);
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 5px 12px rgba(255,105,180,0.3);
+}
+
+.task-btn:hover {
+  transform: scale(1.08);
+}
+
+/* ⏭ Bottom Next Button */
+.next-container {
+  margin: 40px 0 50px;
+}
+
+.next-btn {
+  padding: 14px 32px;
+  font-size: 18px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(45deg, #ff758c, #ff7eb3);
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+  transition: 0.3s ease;
+}
+
+.next-btn:hover {
+  transform: scale(1.1);
+}
+</style>
+</head>
+
+<body>
+
+<h1>Our Long Distance Love Missions 💘</h1>
+<div class="subtitle">പറ്റിക്കരുത്!! മുന്നത്തെ ക്വിസില് എത്രയാ സ്കോർ കിട്ടിയത് ആ task ചെയ്യണം👀<br><br>
+</div>
+
+<div class="tasks">
+  <button class="task-btn">Good Morning Text 🌅</button>
+  <button class="task-btn">Good Night Call 🌙</button>
+  <button class="task-btn">Send a Selfie Today 🤳</button>
+  <button class="task-btn">Voice Note Saying “I Miss You” 🎙️</button>
+  <button class="task-btn">Watch a Movie Together Online 🎬</button>
+  <button class="task-btn">Share Your Favorite Song 🎵</button>
+  <button class="task-btn">Tell Me 1 Thing You Love About Me 💬</button>
+  <button class="task-btn">Virtual Dinner Date 🍽️</button>
+  <button class="task-btn">Send a Cute Reel or Meme 😂</button>
+  <button class="task-btn">Plan Our Future Trip ✈️</button>
+  <button class="task-btn">Random “Thinking of You” Text 💌</button>
+  <button class="task-btn">Say “I Love You” on Call ❤️</button>
+</div>
+
+<!-- Next Button -->
+<div class="next-container">
+  <button class="next-btn" onclick="goNextPage()">Next 💖</button>
+</div>
+
+<script>
+function goNextPage() {
+  window.location.href = "nextpage3.html";
+}
+</script>
+
+</body>
+</html>
