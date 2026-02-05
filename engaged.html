@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>She Said YES! 💍</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:'Poppins', sans-serif;
+  background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+  overflow:hidden;
+}
+
+/* 💌 Card */
+.container {
+  position:relative;
+  text-align:center;
+  padding:40px 30px;
+  border-radius:25px;
+  background:white;
+  max-width:700px;
+  z-index:2;
+  box-shadow:0 15px 40px rgba(0,0,0,0.2);
+}
+
+h1 {
+  font-family:'Playfair Display', serif;
+  color:#e75480;
+  margin-bottom:15px;
+}
+
+p {
+  line-height:1.8;
+  color:#555;
+  margin-bottom:15px;
+}
+
+/* 💖 Button */
+.next-btn {
+  margin-top:15px;
+  padding:12px 28px;
+  font-size:18px;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(45deg,#ff6f91,#ffb6c1);
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.next-btn:hover {
+  transform:scale(1.1);
+}
+
+/* 💋 Floating Kisses */
+.kiss {
+  position: fixed;
+  bottom: -40px;
+  font-size: 24px;
+  animation: floatKiss linear forwards;
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes floatKiss {
+  0% {
+    transform: translateY(0) scale(0.8) rotate(0deg);
+    opacity: 0;
+  }
+  20% { opacity: 1; }
+  100% {
+    transform: translateY(-110vh) scale(1.3) rotate(360deg);
+    opacity: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>She Said YES! 💍❤️</h1>
+
+  <p><b>Anugraha</b> said YES to forever 💞 Today marks the beginning of our beautiful journey together.</p>
+  <p>More love, more laughter, more memories… and a lifetime side by side. We’re officially engaged! 💍✨</p>
+  <p>Thank you for choosing me, for loving me, and for walking into my life. No matter where life takes us, I promise to stand by you, support you, and love you more with each passing day. 💖 Forever yours.</p>
+
+  <button class="next-btn" onclick="goNext()">Continue Our Story 💕</button>
+</div>
+
+<script>
+// 💋 Create floating kisses continuously
+setInterval(() => {
+  const kiss = document.createElement("div");
+  kiss.className = "kiss";
+  kiss.innerHTML = "💋";
+  kiss.style.left = Math.random() * 100 + "vw";
+  kiss.style.animationDuration = (6 + Math.random() * 4) + "s";
+  document.body.appendChild(kiss);
+
+  setTimeout(() => kiss.remove(), 10000);
+}, 500);
+
+// ➡️ Next page
+function goNext(){
+  window.location.href = "nextpage5.html"; // change if your page name is different
+}
+</script>
+
+</body>
+</html>
