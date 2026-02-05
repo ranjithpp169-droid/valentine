@@ -3,93 +3,125 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Beautiful Journey 💞</title>
+<title>Us 💞</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
-  height:100vh;
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(to bottom,#fff5f7,#ffe4ec);
+  overflow-y:auto;
+  min-height:100vh;
   display:flex;
   justify-content:center;
-  align-items:center;
-  font-family:'Poppins',sans-serif;
-  background:linear-gradient(135deg,#f5e6d3,#e8cfc0);
-  overflow:hidden;
 }
 
-/* 💖 Card */
+/* 📸 Flash Screen */
+.flash{
+  position:fixed;
+  top:0;left:0;
+  width:100%;
+  height:100%;
+  background:white;
+  opacity:0;
+  z-index:10;
+  pointer-events:none;
+  transition:opacity 0.2s ease;
+}
+
+/* 💕 Main Container */
 .container{
-  background:#fff5f7;
-  padding:35px 25px;
-  border-radius:25px;
+  max-width:500px;
+  width:92%;
+  margin:40px 0 80px;
+  background:white;
+  padding:25px 20px 35px;
+  border-radius:30px;
+  box-shadow:0 15px 40px rgba(255,105,180,0.2);
   text-align:center;
-  max-width:420px;
-  width:90%;
-  box-shadow:0 15px 40px rgba(0,0,0,0.15);
-  animation:fadeIn 1.5s ease;
+  opacity:0;
+  transform:scale(0.95);
+  transition:0.8s ease;
 }
 
-@keyframes fadeIn{
-  from{opacity:0;transform:translateY(20px);}
-  to{opacity:1;transform:translateY(0);}
+.container.show{
+  opacity:1;
+  transform:scale(1);
 }
 
-h1{
+/* 💞 Title */
+.title{
   font-family:'Playfair Display',serif;
-  color:#b85c7b;
+  font-size:32px;
+  color:#e75480;
   margin-bottom:15px;
 }
 
-/* ✨ Soft Glow Photo */
+/* 🖼 Photo */
 .photo{
   width:100%;
-  max-height:520px;
-  object-fit:cover;
-  border-radius:20px;
-  margin-bottom:18px;
-  animation:glow 4s ease-in-out infinite alternate;
+  border-radius:25px;
+  box-shadow:0 0 35px rgba(255,105,180,0.35);
+  margin-bottom:20px;
 }
 
-/* 💫 Glow Animation */
-@keyframes glow{
-  from{
-    box-shadow:0 0 15px rgba(255,182,193,0.4),
-               0 0 25px rgba(255,182,193,0.3);
-  }
-  to{
-    box-shadow:0 0 30px rgba(255,105,180,0.7),
-               0 0 50px rgba(255,105,180,0.5);
-  }
-}
-
-p{
-  color:#6b4b4b;
+/* 💌 Text */
+.text{
+  color:#5a4a4a;
+  font-size:16px;
   line-height:1.7;
-  font-size:15px;
+  margin-bottom:10px;
+}
+
+.malayalam{
+  margin-top:10px;
+  font-size:17px;
+  color:#7a4b4b;
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
-  <h1>Us 💞</h1>
+<!-- 📸 Camera Flash -->
+<div class="flash" id="flash"></div>
 
-  <img src="us.jpg" alt="Our Photo" class="photo">
+<div class="container" id="content">
+  <div class="title">Us 💞</div>
 
-  <p>
-    Every moment with you feels like home.  
-    From smiles over coffee ☕ to dreams about forever,<br>
-    ഇതാ ഞാൻ നിന്നെ എന്റെ ഉള്ളംകൈയിൽ രേഖപെടുത്തിയിരിക്കുന്നു
-    
-  </p>
+  <!-- 🔁 CHANGE IMAGE NAME BELOW -->
+  <img src="us.jpg" class="photo" alt="Us Together">
+
+  <div class="text">
+    Every moment with you feels like home.<br>
+    From smiles over coffee ☕ to dreams about forever,
+  </div>
+
+  <div class="malayalam">
+    ഇതാ ഞാൻ നിന്നെ എന്റെ ലോകയിൽ  
+    ചേർത്തുപിടിച്ചിരിക്കുന്നു 💖
+  </div>
 </div>
 
+<script>
+// 📸 Camera flash effect on load
+window.onload = function(){
+  let flash = document.getElementById("flash");
+  let content = document.getElementById("content");
+
+  // Flash blink
+  flash.style.opacity = "1";
+  setTimeout(()=>{ flash.style.opacity = "0"; },150);
+
+  // Show content after flash
+  setTimeout(()=>{
+    content.classList.add("show");
+  },500);
+};
+</script>
+
 </body>
-
 </html>
-
-
