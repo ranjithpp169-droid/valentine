@@ -60,7 +60,7 @@ body{
   margin-bottom:15px;
 }
 
-/* 🖼 Photo */
+/* 🎥 Video style */
 .photo{
   width:100%;
   border-radius:25px;
@@ -81,6 +81,13 @@ body{
   font-size:17px;
   color:#7a4b4b;
 }
+
+/* 👉 Tap hint */
+.tap-hint{
+  font-size:14px;
+  color:#e75480;
+  margin-bottom:15px;
+}
 </style>
 </head>
 
@@ -90,18 +97,25 @@ body{
 <div class="flash" id="flash"></div>
 
 <div class="container" id="content">
+
   <div class="title">HOPE</div>
 
-  <!-- 🔁 CHANGE IMAGE NAME BELOW -->
-  <vid src="us.mp4" class="photo" alt="Us Together">
+  <div class="tap-hint">Tap anywhere to play ❤️</div>
+
+  <!-- 🎬 VIDEO WITH SOUND -->
+  <video id="myVideo" class="photo" playsinline>
+    <source src="us.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 
   <div class="text">
-  Maybe in another life, huh?
+    Maybe in another life, huh?
   </div>
 
   <div class="malayalam">
     
   </div>
+
 </div>
 
 <script>
@@ -110,19 +124,20 @@ window.onload = function(){
   let flash = document.getElementById("flash");
   let content = document.getElementById("content");
 
-  // Flash blink
   flash.style.opacity = "1";
   setTimeout(()=>{ flash.style.opacity = "0"; },150);
 
-  // Show content after flash
   setTimeout(()=>{
     content.classList.add("show");
   },500);
 };
+
+// 🔊 Play video with sound on tap anywhere
+document.body.addEventListener("click", function () {
+  const video = document.getElementById("myVideo");
+  video.play();
+});
 </script>
 
 </body>
 </html>
-
-
-
