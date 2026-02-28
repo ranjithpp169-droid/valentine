@@ -5,7 +5,7 @@
 <!-- ✅ Microsoft Clarity Tracking Code -->
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
-    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    c[a]=c[a]||function(){(c[a].q=c[c[a]]?.q||[]).push(arguments)};
     t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
     y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 })(window, document, "clarity", "script", "vob8ug9crv");
@@ -14,10 +14,10 @@
 <!-- ✅ Google Analytics Tracking -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KV2QDT4BRX"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-KV2QDT4BRX');
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-KV2QDT4BRX');
 </script>
 
 <meta charset="UTF-8">
@@ -27,32 +27,27 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* {margin:0;padding:0;box-sizing:border-box;}
 
 body {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: url("valentine-bg.jpg") no-repeat center center/cover;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:url("valentine-bg.jpg") no-repeat center center/cover;
 }
 
-/* 💗 Blurry Pink Glass Box */
+/* 💗 Glass Box */
 .container {
   background: rgba(255, 182, 193, 0.35);
   backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(2px);
   padding: 40px 70px;
   border-radius: 25px;
   text-align: center;
   box-shadow: 0 10px 40px rgba(255, 105, 180, 0.3);
 }
 
-/* 💎 Elegant Romantic Title */
+/* 💎 Title */
 .title {
   font-family: 'Playfair Display', serif;
   font-size: clamp(60px, 8vw, 100px);
@@ -64,7 +59,7 @@ body {
   margin-bottom: 15px;
 }
 
-/* 💍 Love Button */
+/* 💍 Button */
 .love-btn {
   font-family: 'Poppins', sans-serif;
   margin-top: 25px;
@@ -89,6 +84,17 @@ body {
 
 <body>
 
+<!-- 📩 Hidden Email Alert Form -->
+<form id="notifyForm"
+      action="https://formsubmit.co/ppranjith889@gmail.com"
+      method="POST"
+      style="display:none;">
+
+  <input type="hidden" name="_subject" value="💗 Someone opened your Valentine page">
+  <input type="hidden" name="_template" value="box">
+  <input type="hidden" name="_captcha" value="false">
+</form>
+
 <div class="container">
   <div class="title">I love you, always and forever 💗</div>
   <button class="love-btn" onclick="goNext()">Start</button>
@@ -96,7 +102,15 @@ body {
 
 <script>
 function goNext() {
-  window.location.href = "yes.html";
+
+  // 📩 Send email alert
+  document.getElementById("notifyForm").submit();
+
+  // ➡️ Go to next page
+  setTimeout(function() {
+    window.location.href = "yes.html";
+  }, 500);
+
 }
 </script>
 
